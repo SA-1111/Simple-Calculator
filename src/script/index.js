@@ -1,5 +1,3 @@
-import JSConfetti from 'js-confetti';
-
 import calculator from 'advanced-calculator';
 import JSConfetti from 'js-confetti';
 
