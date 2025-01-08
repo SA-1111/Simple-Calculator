@@ -1,0 +1,145 @@
+:root {
+  --primary-color: #f2f2f2;
+  --secondary-color: black;
+  --text-color: white;
+  --font-size:30px
+}
+
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-smooth: always;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: black;
+
+}
+
+::selection {
+  color: white;
+  background: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  cursor: default;
+
+}
+
+nav {
+  display: flex;
+  background-color: var(--secondary-color);
+  min-height: 8dvh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 1dvw 0 1dvw;
+  color: var(--text-color);
+}
+
+nav h1 {
+  font-size: 2dvw;
+}
+
+nav ul li {
+  list-style: none;
+  transition: transform .2s ease-in;
+  cursor: pointer;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1dvw;
+}
+
+nav ul li::after {
+  display: block;
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 1px;
+  transform: scaleX(0);
+  transition: transform .4s;
+  margin-top: 4px;
+  transform-origin: left;
+}
+
+nav ul li:hover::after {
+  transform: scaleX(1);
+  /* Scale the line to full width */
+}
+
+main {
+  width: 80%;
+  margin: 2vw auto;
+  justify-content: center;
+  text-align: center;
+}
+
+main div {
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+main p {
+  margin: 3rem 0 2rem 0;
+  font-size: 2.5dvh;
+  text-wrap: pretty;
+}
+
+main p span {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 0 1px 0 1px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+
+.space-filler {
+  flex: 1;
+  flex-shrink: 1;
+}
+
+footer {
+  margin-top: 3rem;
+  width: 100%;
+  min-height: 15dvh;
+  background-color: var(--secondary-color);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg); /* Start at 0 degrees */
+  }
+  10% {
+    transform: rotateX(90deg); /* Full rotation */
+  }
+  20%{
+    transform: rotateX(0deg); /* Full rotation */
+  }
+}
+
+/* canvas for confetti */
+canvas{
+  z-index: -10;
+  position: absolute;
+  margin: auto;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: white;
+}
