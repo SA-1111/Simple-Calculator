@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#cal_holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cal {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    transition: width 1s ease-in-out;
+    width: 19dvw;
+    min-height: 40dvh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0 0 0px;
+    border: 3px solid grey;
+    position: relative;
+    align-items: flex-end;
+}
+
+/* #cal:hover {
+    width: 38dvw;
+} */
+
+input {
+    width: 17vw;
+    height: 5dvh;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    outline: none;
+    letter-spacing: 1px;
+    text-align: right;
+    padding: 10px 5px 5px 5px;
+}
+
+#input_holder, #output_holder {
+    width: 100%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: end;
+    padding: 0 10px 0 10px;
+    box-sizing: border-box;
+}
+
+#input::placeholder {
+    color: var(--text-color);
+}
+
+#output::placeholder {
+    color: orange;
+}
+
+#input {
+    padding: 3px;
+    color: var(--text-color);
+    font-size: 3dvh;
+
+}
+
+#output {
+    font-size: 3dvh;
+    color: orange;
+}
+
+input::selection {
+    background-color: white;
+    color: black;
+}
+
+#key_holder {
+    box-sizing: border-box;
+    min-width: 19dvw;
+    min-height: 24vh;
+    margin: 10px 0 0 0;
+    background-color: rgb(39, 39, 39);
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    border-radius: inherit;
+}
+
+button {
+    background-color: #1e201a;
+    color: var(--text-color);
+    border: none;
+    border-radius: 100px;
+    margin: 2px;
+    font-weight: 600;
+    font-family: "Roboto", "sans-serif";
+    font-size: 2dvh;
+    cursor: pointer;
+    width: 5dvh;
+}
+
+button:hover {
+    background-color: black;
+}
+
+#num_holder {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+#operation_holder {
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.operation-btn {
+    color: orange;
+}
+
+#hist {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 5dvh;
+    font-family: "Roboto";
+    color: black;
+    transform: translate(-90%, -10%);
+    width: 10dvh;
+    cursor: pointer;
+}

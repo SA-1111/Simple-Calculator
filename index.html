@@ -6,13 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online JS Compiler</title>
   <link rel="stylesheet" href="./src/styles/index.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs/loader.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.1.0/math.min.js"></script>
+  
   <script type="module" src="./src/script/index.js"></script>
+  <script type="module" src="./src/script/animation.js"></script>
+  <script type="module" src="./src/script/calculator.js"></script>
+  
+  <link rel="stylesheet" href="./src/styles/calculator.css">
+  
   <!-- Fonts start -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./src/styles/calculator.css">
   
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -36,39 +42,43 @@
     <div>
       <h2 class="playwrite-au-sa-title2">A Simple Calculator </h2>
     </div>
-    <p class="roboto-regular">A <span class="special">Simple</span>, <span class="special">Free</span>, <span class="special">Fun</span> and <span class="special">elegant</span> web
-      calculator filled with love and vanilla!</p>
+    <p class="roboto-regular">A <span class="special">Simple</span> <span class="special">Free</span> <span class="special">Fun</span> and <span class="special">elegant</span> web
+      calculator!</p>
   </main>
 
   <section id="cal_holder">
     <div id="cal">
+      <img id="hist" src="./public/assets/history_icon.svg"></img>
       <div id="input_holder">
-        <input type="text" placeholder="Input"  id="input">
+        <input type="text" class="roboto-medium" placeholder="0"  id="input">
       </div>
       <div id="output_holder">
-        <input type="text" placeholder="Output" readonly id="output">
+        <input type="text" class="roboto-medium" placeholder="Output" readonly id="output">
       </div>
       <div id="key_holder">
         <div id="num_holder">
-          <button class="button" id="button-1">1</button>
-          <button class="button" id="button-2">2</button>
-          <button class="button" id="button-3">3</button>
-          <button class="button" id="button-4">4</button>
-          <button class="button" id="button-5">5</button>
-          <button class="button" id="button-6">6</button>
-          <button class="button" id="button-7">7</button>
-          <button class="button" id="button-8">8</button>
-          <button class="button" id="button-9">9</button>
-          <button class="button" id="button-0" style="grid-column: 2; grid-row: 4;">0</button> 
+          <button class="cal-btn" id="button-1">1</button>
+          <button class="cal-btn" id="button-2">2</button>
+          <button class="cal-btn" id="button-3">3</button>
+          <button class="cal-btn" id="button-4">4</button>
+          <button class="cal-btn" id="button-5">5</button>
+          <button class="cal-btn" id="button-6">6</button>
+          <button class="cal-btn" id="button-7">7</button>
+          <button class="cal-btn" id="button-8">8</button>
+          <button class="cal-btn" id="button-9">9</button>
+          <button class="cal-btn" id="button-point">.</button>
+          <button class="cal-btn" id="button-0">0</button> 
+          <button class="cal-btn" id="button-00">00</button>
         </div>
         <div id="operation_holder">
-          <button class="button" id="button-clear">C</button>
-          <button class="button" id="button-equals">=</button>
-          <button class="button" id="button-plus">+</button>
-          <button class="button" id="button-minus">-</button>
-          <button class="button" id="button-multiply">*</button>
-          <button class="button" id="button-divide">/</button>
-          <button class="button" id="button-remove-last"style="grid-column: 1/3; grid-row: 4;" >Undo</button>
+          <button class="cal-btn operation-btn" id="button-clear">C</button>
+          <button class="cal-btn operation-btn" id="button-remove-last" >del</button>
+          <button class="cal-btn operation-btn" id="button-equals">=</button>
+          <button class="cal-btn operation-btn" id="button-plus">+</button>
+          <button class="cal-btn operation-btn" id="button-minus">-</button>
+          <button class="cal-btn operation-btn" id="button-multiply">*</button>
+          <button class="cal-btn operation-btn" id="button-divide">/</button>
+          <button class="cal-btn operation-btn" id="button-brackets">()</button>
         </div>
       </div>
     </div>
