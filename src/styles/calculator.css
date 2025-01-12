@@ -124,7 +124,7 @@ button:hover {
     color: orange;
 }
 
-#hist {
+#history_btn {
     position: absolute;
     top: 0;
     left: 0;
@@ -134,4 +134,24 @@ button:hover {
     transform: translate(-90%, -10%);
     width: 10dvh;
     cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+
+    #cal {
+        width: 65vw;
+    }
+
+    input {
+        width: 70vw;
+    }
+
+    #key_holder {
+        min-width: 65vw;
+    }
+
+    button {
+        width: 9vw;
+    }
+    
 }
