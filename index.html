@@ -33,7 +33,7 @@
     <h1>SA-1111</h1>
     <div>
       <ul>
-        <li><a class="roboto-bold" id="check_project" href="">Check Other Projects</a></li>
+        <!-- <li><a class="roboto-bold" id="check_project" href="">Check Other Projects</a></li> -->
       </ul>
     </div>
   </nav>
@@ -114,31 +114,12 @@
 
   <div id="history_holder">
     <div id="history">
-      <button id="hist_close" >X</button>
+      <button id="hist_close">X</button>
       <h3 id="hist_title">History</h3>
       <ul id="history-list">
-        <li>
-            <span class="expression">Expression : 5 + 3</span>
-            <span class="result">Result : 8</span>
-            <span class="delete_btn">X</span>
-          </li>
-          <li>
-            <span class="expression">Expression : 12 / 4</span>
-            <span class="result"> Result: 3</span>
-            <span class="delete_btn">X</span>
-        </li>
+
       </ul>
     </div>
-  </div>
-  <script>
-    const historyList = document.getElementById('history-list');
-
-    function addHistoryItem(expression, result) {
-      const listItem = document.createElement('li');
-      listItem.textContent = `${expression} = ${result}`;
-      historyList.appendChild(listItem);
-    }
-  </script>
   </div>
 
   <div class="space-filler"></div>
@@ -146,7 +127,34 @@
   <canvas id="bob"></canvas>
 
   <footer>
+  <style>
+    footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    }
 
+    footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    }
+
+    footer img {
+    width: 20px;
+    vertical-align: middle;
+    }
+  </style>
+  <p>Calculator made by SA-1111</p>
+  <a href="https://github.com/SA-1111" target="_blank">
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo">
+    GitHub Profile
+  </a>
+  <a href="https://github.com/your-repo-link" target="_blank">
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub logo">
+    Repository
+  </a>
   </footer>
 
 </body>

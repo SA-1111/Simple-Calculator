@@ -46,14 +46,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    
+    
     // Add click event listener to all buttons
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => handleButtonClick(e, inputField, outputField));
     });
-
-
-
+    
+    
+    updateHistoryList();
+    
 });
+
+function updateHistoryList() {
+    const historyList = document.getElementById('history-list');
+    historyList.innerHTML = ''; // Clear the existing list
+
+    calculation.forEach((calc, index) => {
+        const listItem = document.createElement('li');
+
+        const expressionSpan = document.createElement('span');
+        expressionSpan.className = 'expression';
+        expressionSpan.textContent = `Expression: ${calc.input}`;
+
+        const resultSpan = document.createElement('span');
+        resultSpan.className = 'result';
+        resultSpan.textContent = `Result: ${calc.result}`;
+
+        const deleteBtn = document.createElement('span');
+        deleteBtn.className = 'delete_btn';
+        deleteBtn.textContent = 'X';
+        deleteBtn.addEventListener('click', () => {
+            calculation.splice(index, 1);
+            localStorage.setItem('calculation', JSON.stringify(calculation));
+            updateHistoryList();
+        });
+
+        listItem.appendChild(expressionSpan);
+        listItem.appendChild(resultSpan);
+        listItem.appendChild(deleteBtn);
+
+        historyList.appendChild(listItem);
+    });
+}
 
 function handleButtonClick(event, inputField, outputField) {
     const buttonText = event.target.textContent;
@@ -125,11 +160,12 @@ function calculateResult(inputField, outputField) {
         const result = calculate(inputField.value);
         outputField.value = result;
         saveCalculation(inputField.value, result);
-        // eval(`boom()`);
+        eval(`boom()`);
+        updateHistoryList()
     } catch (error) {
         console.log(error);
         outputField.value = 'Error';
-        // eval(`sadboom()`);
+        eval(`sadboom()`);
     }
 }
 

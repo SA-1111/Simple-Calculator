@@ -186,7 +186,7 @@ button:hover {
     display: none;
 }
 
-#hist_title{
+#hist_title {
     font-size: 3dvh;
     margin-bottom: 2rem;
 }
@@ -209,7 +209,7 @@ button:hover {
     border: 2px solid black;
 }
 
-#hist_close{
+#hist_close {
     font-size: 4dvh;
     border: none;
     background-color: transparent;
@@ -319,8 +319,26 @@ button:hover {
         padding: 3dvw;
     }
 
-    #history_holder {
-        display: none;
+    #history {
+        width: 90dvw;
+        height: 70dvh;
+    }
+
+    .expression {
+        background-color: white;
+        flex: 0 0 40%;
+        /* Takes 70% of the space */
+        text-align: start;
+        overflow: scroll;
+    }
+    
+    .result {
+        flex: 0 0 30%;
+        /* Takes 30% of the space */
+        text-align: right;
+        text-align: start;
+        /* Aligns text to the right */
+        overflow: scroll;
     }
 
 }
