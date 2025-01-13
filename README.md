@@ -40,7 +40,10 @@ Installation
         If standalone: Follow platform-specific instructions (e.g., npm start if using Node.js).
 
 📖 Usage
-
+    
+    Naviagte to your project's directory and 
+    To run the Application use - npx parcel index.html
+    
     Perform basic arithmetic calculations.
     Use the following window functions for additional fun:
         boom(): Call this function to see the calculator "explode" (just for fun).
