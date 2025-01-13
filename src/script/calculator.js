@@ -10,21 +10,49 @@ if (localStorage.getItem('calculation') !== null) {
 let newCalculation = {};
 
 document.addEventListener('DOMContentLoaded', () => {
-
     const inputField = document.getElementById('input');
     const outputField = document.getElementById('output');
-    const buttons = document.querySelectorAll('.cal-btn');
-
+    const buttons = document.querySelectorAll('.cal_button');
+    
     const histbtn = document.getElementById('history_btn');
+    const advanceCal = document.getElementById('adv_btn');
+    const advKeyHolder = document.getElementById('key_holder_adv');
 
+    const histCloseBtn =  document.getElementById("hist_close");
+    const historyHolder = document.getElementById("history_holder");
+    
+    histbtn.addEventListener("click",()=>{
+        historyHolder.style.display = "flex"
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+    })
+    
+    histCloseBtn.addEventListener('click', (e) => {
+        historyHolder.style.display = "none"
+        document.body.style.overflow = 'scroll';
+    })
+    
+    let isRotated = false;
+    advanceCal.addEventListener("click", (e) => {
+        isRotated = !isRotated; // Toggle the rotation state
+        const rotation = isRotated ? "rotate(180deg) translate(210%, -100%)" : "rotate(360deg) translate(-120%, 0%)";
+        advanceCal.style.transform = `${rotation}`;    
+        if(isRotated){
+            advKeyHolder.style.display="block";
+        }
+        else{
+            advKeyHolder.style.display="none ";
+        }
+    })
 
     // Add click event listener to all buttons
     buttons.forEach((button) => {
         button.addEventListener('click', (e) => handleButtonClick(e, inputField, outputField));
     });
-    
 
-    
+
+
 });
 
 function handleButtonClick(event, inputField, outputField) {
@@ -54,6 +82,10 @@ function handleButtonClick(event, inputField, outputField) {
 
 function calculate(input) {
     input = input.replace("×", '*');
+    input = input.replace("√", 'sqrt');
+    input = input.replace("P", 'permutations');
+    input = input.replace("C", 'combinations');
+    input = input.replace("dy/dx", 'derivative');
     return math.evaluate(input);
 
 }

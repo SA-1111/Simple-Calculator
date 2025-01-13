@@ -11,7 +11,6 @@
     background-color: var(--secondary-color);
     color: var(--text-color);
     border-radius: 1rem;
-    transition: width 1s ease-in-out;
     width: 19dvw;
     min-height: 40dvh;
     height: fit-content;
@@ -23,10 +22,6 @@
     position: relative;
     align-items: flex-end;
 }
-
-/* #cal:hover {
-    width: 38dvw;
-} */
 
 input {
     width: 17vw;
@@ -43,7 +38,8 @@ input {
     padding: 10px 5px 5px 5px;
 }
 
-#input_holder, #output_holder {
+#input_holder,
+#output_holder {
     width: 100%;
     align-self: flex-end;
     display: flex;
@@ -77,7 +73,8 @@ input::selection {
     color: black;
 }
 
-#key_holder {
+#key_holder,
+#key_holder_adv {
     box-sizing: border-box;
     min-width: 19dvw;
     min-height: 24vh;
@@ -90,7 +87,12 @@ input::selection {
     border-radius: inherit;
 }
 
-button {
+#key_holder_adv {
+    display: none;
+    height: fit-content;
+}
+
+.cal_btn {
     background-color: #1e201a;
     color: var(--text-color);
     border: none;
@@ -100,7 +102,22 @@ button {
     font-family: "Roboto", "sans-serif";
     font-size: 2dvh;
     cursor: pointer;
-    width: 5dvh;
+    width: fit-content;
+    padding: 1dvw;
+}
+
+.cal_btn_adv {
+    background-color: #1e201a;
+    color: var(--text-color);
+    border: none;
+    border-radius: 100px;
+    margin: 2px;
+    font-weight: 600;
+    font-family: "Roboto", "sans-serif";
+    font-size: 2dvh;
+    cursor: pointer;
+    width: fit-content;
+    padding: 1dvw;
 }
 
 button:hover {
@@ -111,6 +128,14 @@ button:hover {
     width: 60%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+#num_holder_adv {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -136,22 +161,166 @@ button:hover {
     cursor: pointer;
 }
 
+#adv_btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: "Roboto";
+    color: black;
+    transform: translate(-120%, 0%);
+    width: 7dvh;
+    cursor: pointer;
+    transform: rotateY('30deg');
+    transform-origin: 100% 0%;
+}
+
+#history_holder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#hist_title{
+    font-size: 3dvh;
+    margin-bottom: 2rem;
+}
+
+
+#history {
+    font-family: sans-serif;
+    position: relative;
+    width: 70dvw;
+    height: 70dvh;
+    color: black;
+    background-color: white;
+    padding: 2%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+
+#hist_close{
+    font-size: 4dvh;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 4%;
+    right: 2%;
+    cursor: pointer;
+}
+
+#history ul {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 3dvh;
+    margin-top: 10px;
+    overflow: scroll;
+}
+
+#history li {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+#history-list li span {
+    height: 3dvh;
+    border-radius: .5rem;
+    background-color: black;
+    color: white;
+    padding: .5rem;
+    white-space: nowrap;
+    overflow: scroll;
+    font-size: 2dvh;
+}
+
+.expression {
+    background-color: white;
+    flex: 0 0 60%;
+    /* Takes 70% of the space */
+    text-align: start;
+    overflow: scroll;
+}
+
+.result {
+    flex: 0 0 20%;
+    /* Takes 30% of the space */
+    text-align: right;
+    text-align: start;
+    /* Aligns text to the right */
+    overflow: scroll;
+}
+
+
+
+
+
+
 @media screen and (max-width: 600px) {
 
     #cal {
         width: 65vw;
+        height: fit-content;
     }
 
     input {
         width: 70vw;
     }
 
-    #key_holder {
+    #key_holder,
+    #key_holder_adv {
         min-width: 65vw;
+        height: fit-content;
     }
 
-    button {
-        width: 9vw;
+
+    .key_holder2 {
+        transition: all 2s ease-in-out;
     }
-    
+
+
+
+    #cal.advance {
+        width: 90vw;
+    }
+
+    #history_btn {
+        display: none;
+    }
+
+    #adv_btn {
+        font-size: 4dvh;
+        transform: translate(-100%, 0%);
+        width: 5dvh;
+    }
+
+    .cal_btn {
+        padding: 3dvw;
+    }
+
+    .cal_btn_adv {
+        padding: 3dvw;
+    }
+
+    #history_holder {
+        display: none;
+    }
+
 }
