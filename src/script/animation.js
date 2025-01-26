@@ -1,4 +1,4 @@
-import JSConfetti from 'js-confetti';
+import JSConfetti from 'https://cdn.skypack.dev/js-confetti';
 
 document.addEventListener('DOMContentLoaded', () => {
     
