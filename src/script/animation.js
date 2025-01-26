@@ -1,6 +1,8 @@
+console.log("confet");
 import JSConfetti from 'js-confetti';
 
 document.addEventListener('DOMContentLoaded', () => {
+    
 
     const canvas = document.getElementById('bob')
     const jsConfetti = new JSConfetti({ canvas })

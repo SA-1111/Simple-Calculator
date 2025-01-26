@@ -3,7 +3,6 @@ if (localStorage.getItem('calculation') !== null) {
     const storedCalculation = JSON.parse(localStorage.getItem('calculation'));
     if (Array.isArray(storedCalculation)) {
         calculation = storedCalculation;
-        console.log('calculation', calculation);
     }
 }
 
