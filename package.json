@@ -11,7 +11,12 @@
     "svgo": "^3.3.2"
   },
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel index.html --dist-dir docs",
     "build": "parcel build index.html --dist-dir docs"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not dead"
+  ]
 }
