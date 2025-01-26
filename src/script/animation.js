@@ -1,4 +1,3 @@
-console.log("confet");
 import JSConfetti from 'js-confetti';
 
 document.addEventListener('DOMContentLoaded', () => {
