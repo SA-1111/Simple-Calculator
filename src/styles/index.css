@@ -118,8 +118,9 @@ main p span {
 
 footer {
   margin-top: 3rem;
-  width: 100%;
+  width: 100dvw;
   min-height: 15dvh;
+  box-sizing: border-box;
   background-color: var(--secondary-color);
 }
 
