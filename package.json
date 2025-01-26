@@ -13,10 +13,5 @@
   "scripts": {
     "start": "parcel index.html --dist-dir docs",
     "build": "parcel build index.html --dist-dir docs"
-  },
-  "browserslist": [
-    "defaults",
-    "not IE 11",
-    "not dead"
-  ]
+  }
 }
