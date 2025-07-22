@@ -1,4 +1,4 @@
-Checkout on - https://sa-1111.github.io/Simple-Calculator/
+Check it on - https://sa-1111.github.io/Simple-Calculator/
 
 # Simple-Calculator
 Simple Calculator with Cool Window Functions 🚀
